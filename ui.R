@@ -14,6 +14,7 @@
 
 # Load required packages
 library(shiny)  # Shiny itself
+library(shinythemes)  # change the basic look and feel
 library(plotly) # to use plotly for the interactive charts
 
 # ui.R - the Shiny user interface
@@ -22,7 +23,7 @@ library(plotly) # to use plotly for the interactive charts
 # mainpanel tab is also tabbed itself.  The documentation is found in the 
 # 'about' panel.
 
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinytheme("united"),
   navbarPage(
     "Canterbury (NZ) Earthquake Analysis",
     tabPanel(
@@ -59,7 +60,11 @@ shinyUI(fluidPage(
         ),
         
         helpText("Select different views using the tabs on the right"),
-        helpText("(Note you may experience some delay loading map data")
+        helpText("(Note: You may experience some delay loading maps)"),
+        br(),
+        helpText("Download the dataset"),
+        downloadButton('dl_data', 'Download'),
+        helpText("(Note: Filters above apply)")
       ),
       
       mainPanel(
@@ -132,7 +137,7 @@ shinyUI(fluidPage(
             "Find the Fault",
             h3("Finding the Fault Line"),
             p(
-              "A previously unknown earthquake faultline existed.  Using the earthquake data
+              "A previously unknown earthquake fault line existed.  Using the earthquake data
               overlaid on a map of Canterbury and then adding a smoothed trendline gives
               possible clue to its location."
             ),

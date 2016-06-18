@@ -33,7 +33,7 @@ This analysis project explores seismic data collected by GeoNet and made publicl
 
 Each of these questions is explored on its own tab in the main page.  
 
-Controls in the side navigation enable some interactive exploration of the dataset.  
+Controls in the side navigation enable some interactive exploration of the dataset.
 
 ## Using the Earthquake App
 
@@ -41,11 +41,13 @@ You can use the date sliders to change the start and end dates of the earthquake
 
 You can use the check boxes to select all earthquakes or only those greater than magnitude 3.0 (a commonly used boundary as humans generally don't notice earthquakes below 3.0) or to use different scales in the earthquake prediction tab.
 
+You can also download the filtered dataset as a .csv file so you can do some analysis of your own.
+
 Have a play.
 
 # The Technical Stuff
 
-This app is written in R and Shiny and uses a number of R packages as stated below.
+This app is written in R and Shiny and uses the shinythemes package to change the standard UI to something a little nicer.   It also uses a number of R packages as stated below.
 
 ## Data Processing
 

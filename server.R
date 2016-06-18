@@ -239,5 +239,13 @@ shinyServer(function(input, output) {
     
     print(p)
   })
-  
+
+  # download the filtered dataset to the user's computer as a csv file
+  output$dl_data <- downloadHandler(
+    filename = "quake.csv",
+    content = function(con) {
+      write.csv(get_data(), con, row.names = FALSE)
+    }
+  )
+    
 })
